@@ -1,4 +1,4 @@
-setwd("D:/Cours MOOC/Introduction à la statistique avec R/Applications") #pour le répertoire
+setwd("D:/Cours MOOC/Introduction Ã  la statistique avec R/Applications") #pour le rÃ©pertoire
 heart <- read.csv("heart.csv")
 str(heart)
 table(heart$target)
@@ -6,9 +6,9 @@ heart$sex <- factor(heart$sex, level=c(0,1), labels=c("F","M"))
 table(heart$sex)
 barplot(table(heart$sex))
 barplot(table(heart$target))
-hist(heart$chol, main = "Histogramme de l'age", col="yellow", xlab = "age", ylab="Fréquence")
-hist(heart$chol, main = "Histogramme du cholesterol", col="green", xlab = "Cholesterol", ylab="Fréquence")
-hist(heart$trestbps, main = "Histogramme du rythme cardiaque", col="blue", xlab = "btpms", ylab="Fréquence")
+hist(heart$chol, main = "Histogramme de l'age", col="yellow", xlab = "age", ylab="FrÃ©quence")
+hist(heart$chol, main = "Histogramme du cholesterol", col="green", xlab = "Cholesterol", ylab="FrÃ©quence")
+hist(heart$trestbps, main = "Histogramme du rythme cardiaque", col="blue", xlab = "btpms", ylab="FrÃ©quence")
 boxplot(heart$age, xlab="age")
 boxplot(heart$age~heart$target)
 boxplot(heart$chol~heart$target)
@@ -79,4 +79,4 @@ explicatives <-  c("age", "chol","sex", "slope", "trestbps")
 fpca(data = heart, y=expliquer, x=explicatives, partial="No")
 
 cah <- hclust(dist(t(scale(heart))), method="ward.D") #le "t" pour classer les variables et non pas les individus
-plot(cah,main="classification hiérarchique")
+plot(cah,main="classification hiÃ©rarchique")
